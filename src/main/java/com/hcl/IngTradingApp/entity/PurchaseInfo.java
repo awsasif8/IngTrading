@@ -44,6 +44,13 @@ public class PurchaseInfo  implements Serializable{
 	@Column(name="CONFIRM_ORDER")
 	private Character confirmOrder;
 	
+	
+	public Character getConfirmOrder() {
+		return confirmOrder;
+	}
+	public void setConfirmOrder(Character confirmOrder) {
+		this.confirmOrder = confirmOrder;
+	}
 	public Long getPurchseId() {
 		return purchseId;
 	}
