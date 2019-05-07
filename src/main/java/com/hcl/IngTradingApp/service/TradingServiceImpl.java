@@ -24,7 +24,7 @@ public class TradingServiceImpl implements TradingService{
 	
 	public ConfirmResponse confirm(TradingDto tradingDto) {
 		
-		String uri="http://localhost:9090/ingtrading/verify/{id}";
+		String uri="http://13.232.35.16:9090/ingtrading/verify/{id}";
 		PurchaseInfo purchaseInfo=purchaseInfoRepository.findByStockId(tradingDto.getStockId());
 		Stocks stock=stocksRepository.findByStockId(tradingDto.getStockId());
 		RestTemplate restTemplate = new RestTemplate();
