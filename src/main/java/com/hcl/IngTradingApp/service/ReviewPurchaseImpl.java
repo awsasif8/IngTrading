@@ -37,6 +37,7 @@ public class ReviewPurchaseImpl implements ReviewPurchase{
 		Stocks stocks=	stockRepository.findByStockId(purchaseDto.getStockId()); 
 			
 		if(stocks!=null) {
+			   if(purchaseDto.getVolumeofstock()<=stocks.getNumberOfStocks()) {
 		    
 			   if(purchaseDto.getVolumeofstock()<500) {
 				   
@@ -44,7 +45,10 @@ public class ReviewPurchaseImpl implements ReviewPurchase{
 				}
 			   
 			   if(purchaseDto.getVolumeofstock()>=500) {
-				    fees= stocks.getStandardPrice()*(0.15/100)*purchaseDto.getVolumeofstock();
+				   
+		             int shares=purchaseDto.getVolumeofstock()-500;
+				   
+				    fees= (stocks.getStandardPrice()*(0.15/100)*shares)+(stocks.getStandardPrice()*(0.10/100)*500);
 			      
 			   }
 			   
@@ -59,21 +63,34 @@ public class ReviewPurchaseImpl implements ReviewPurchase{
 				purchaseinfo.setTotalprice(totalPrice);
 				purchaseRepository.save(purchaseinfo);
 			   
-				response.setPrice("Stocks Price subjected to Market Price");
-				response.setFees("Fees applicale on you price. Fees are Rs." +fees);
+				response.setPrice("Stocks Price subjected to Market Rate");
+				response.setStandardPrice(stocks.getStandardPrice());		
+				response.setFees("Fees applicable on your order equal to Rs." +fees);
 				response.setMarketPrice(marketPrice);
-				response.setStandardPrice(stocks.getStandardPrice());
-				response.setMessage("purchase to order confirm or Cancel");
+				response.setMessage("proceed to order Confirm or Cancel");
 			   
 			   
 		      }
-		
+			   else {
+					response.setMessage("Requested Stocks are morethan stocks avalablity");
+				}
+		}
 		else {
 			response.setMessage("Stocks are not available");
-		}
+		  }
+		
 		
 		return response;
 	}
+
+
+	@Override
+	public void  cancelOrder(Long stockId, Long userId) {
+		  purchaseRepository.deleteByStockIdAndUserid(stockId,userId);
+			
+		
+	}
+
 
 	
 }

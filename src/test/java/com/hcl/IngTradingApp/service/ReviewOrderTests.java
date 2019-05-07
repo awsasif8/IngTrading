@@ -48,5 +48,15 @@ public class ReviewOrderTests {
 		      Assert.assertEquals("purchase to order confirm or Cancel", response.getMessage());
 		
 	}
+	
+	
+	@Test
+	public void testCancelOrder() {
+		
+		purchaseServiceImpl.cancelOrder(1L, 1L);
+		
+		
+		
+	}
 
 }
