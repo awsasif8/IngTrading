@@ -1,11 +1,11 @@
 package com.hcl.IngTradingApp.service;
 
 import com.hcl.IngTradingApp.dto.ConfirmResponse;
-import com.hcl.IngTradingApp.dto.TradingDto;
+import com.hcl.IngTradingApp.dto.TradingDTO;
 
 public interface TradingService {
 
-	ConfirmResponse confirm(TradingDto tradingDto);
+	ConfirmResponse confirm(TradingDTO tradingDto);
 
 	String verify(Long tradingDto);
 

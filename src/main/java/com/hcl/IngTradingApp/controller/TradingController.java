@@ -8,9 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hcl.IngTradingApp.dto.ConfirmResponse;
-import com.hcl.IngTradingApp.dto.TradingDto;
+import com.hcl.IngTradingApp.dto.TradingDTO;
 import com.hcl.IngTradingApp.service.TradingService;
-import com.hcl.IngTradingApp.service.TradingServiceImpl;
 
 @RestController
 public class TradingController {
@@ -19,7 +18,7 @@ public class TradingController {
 	TradingService tradingService;
 	
 	@PostMapping("/confirmOrder")
-	public ConfirmResponse confirm(@RequestBody TradingDto tradingDto)
+	public ConfirmResponse confirm(@RequestBody TradingDTO tradingDto)
 	{
 		ConfirmResponse confirmResponse=tradingService.confirm(tradingDto);
 		return confirmResponse;

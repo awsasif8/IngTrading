@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.hcl.IngTradingApp.dto.ConfirmResponse;
-import com.hcl.IngTradingApp.dto.TradingDto;
+import com.hcl.IngTradingApp.dto.TradingDTO;
 import com.hcl.IngTradingApp.entity.PurchaseInfo;
 import com.hcl.IngTradingApp.entity.Stocks;
 import com.hcl.IngTradingApp.repository.PurchaseInfoRepository;
@@ -22,7 +22,7 @@ public class TradingServiceImpl implements TradingService{
 	@Autowired
 	StocksRepository stocksRepository;
 	
-	public ConfirmResponse confirm(TradingDto tradingDto) {
+	public ConfirmResponse confirm(TradingDTO tradingDto) {
 		
 		String uri="http://13.232.35.16:9090/ingtrading/verify/{id}";
 		PurchaseInfo purchaseInfo=purchaseInfoRepository.findByStockId(tradingDto.getStockId());
