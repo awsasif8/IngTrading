@@ -30,11 +30,8 @@ public class PurchaseInfo  implements Serializable{
 	@Column(name="VOLUME_OF_STOCKS")
 	private Integer volumeofstock;
 	
-	@Column(name="STOCK_PURCHASE_PRICE")
-	private Double stockpurchasedprice;	
-	
 	@Column(name="STOCK_PURCHASE_DATE")
-	private Date stockpurchaseddate;
+	private Date stockpurchasedDate;
 	
 	@Column(name="TOTAL_PRICE")
 	private Double totalprice;	
@@ -69,17 +66,12 @@ public class PurchaseInfo  implements Serializable{
 	public void setVolumeofstock(Integer volumeofstock) {
 		this.volumeofstock = volumeofstock;
 	}
-	public Double getStockpurchasedprice() {
-		return stockpurchasedprice;
+
+	public Date getStockpurchasedDate() {
+		return stockpurchasedDate;
 	}
-	public void setStockpurchasedprice(Double stockpurchasedprice) {
-		this.stockpurchasedprice = stockpurchasedprice;
-	}
-	public Date getStockpurchaseddate() {
-		return stockpurchaseddate;
-	}
-	public void setStockpurchaseddate(Date stockpurchaseddate) {
-		this.stockpurchaseddate = stockpurchaseddate;
+	public void setStockpurchaseddate(Date stockpurchasedDate) {
+		this.stockpurchasedDate = stockpurchasedDate;
 	}
 	public Double getTotalprice() {
 		return totalprice;
@@ -93,13 +85,14 @@ public class PurchaseInfo  implements Serializable{
 	public void setFees(Double fees) {
 		this.fees = fees;
 	}
+	
 	@Override
 	public String toString() {
 		return "PurchaseInfo [purchseId=" + purchseId + ", stockId=" + stockId + ", userid=" + userid
-				+ ", volumeofstock=" + volumeofstock + ", stockpurchasedprice=" + stockpurchasedprice
-				+ ", stockpurchaseddate=" + stockpurchaseddate + ", totalprice=" + totalprice + ", fees=" + fees + "]";
-	}	
-
+				+ ", volumeofstock=" + volumeofstock + ", stockpurchasedDate=" + stockpurchasedDate + ", totalprice="
+				+ totalprice + ", fees=" + fees + ", confirmOrder=" + confirmOrder + "]";
+	}
+	
 	
 	
 	
