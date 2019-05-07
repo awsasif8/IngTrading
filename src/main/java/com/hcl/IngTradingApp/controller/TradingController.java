@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hcl.IngTradingApp.Dto.ConfirmResponse;
-import com.hcl.IngTradingApp.Dto.TradingDto;
+import com.hcl.IngTradingApp.dto.ConfirmResponse;
+import com.hcl.IngTradingApp.dto.TradingDto;
 import com.hcl.IngTradingApp.service.TradingService;
 import com.hcl.IngTradingApp.service.TradingServiceImpl;
 

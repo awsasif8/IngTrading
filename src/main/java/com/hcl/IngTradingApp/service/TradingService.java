@@ -1,7 +1,7 @@
 package com.hcl.IngTradingApp.service;
 
-import com.hcl.IngTradingApp.Dto.ConfirmResponse;
-import com.hcl.IngTradingApp.Dto.TradingDto;
+import com.hcl.IngTradingApp.dto.ConfirmResponse;
+import com.hcl.IngTradingApp.dto.TradingDto;
 
 public interface TradingService {
 

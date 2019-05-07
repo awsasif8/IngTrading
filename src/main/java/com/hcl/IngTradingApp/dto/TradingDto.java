@@ -1,4 +1,4 @@
-package com.hcl.IngTradingApp.Dto;
+package com.hcl.IngTradingApp.dto;
 
 import java.io.Serializable;
 

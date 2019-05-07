@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.hcl.IngTradingApp.Dto.ConfirmResponse;
-import com.hcl.IngTradingApp.Dto.TradingDto;
+import com.hcl.IngTradingApp.dto.ConfirmResponse;
+import com.hcl.IngTradingApp.dto.TradingDto;
 import com.hcl.IngTradingApp.entity.PurchaseInfo;
 import com.hcl.IngTradingApp.entity.Stocks;
 import com.hcl.IngTradingApp.repository.PurchaseInfoRepository;
