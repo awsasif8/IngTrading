@@ -83,6 +83,36 @@ public class UserServiceImplTest {
 		
 	
 	}
+	
+	
+	@Test
+	public void testStockDetails() {
+		
+				
+		Stocks stocks=new Stocks();	
+		stocks.setStockId(1l);
+		stocks.setCompanyName("AAA");
+		stocks.setNumberOfStocks(500);
+		stocks.setStandardPrice(5000.00);
+		
+		
+				
+		StockDto stockDto=new StockDto();
+		stocks.setStockId(1l);
+		stockDto.setCompanyName("AAA");
+		stockDto.setNumberOfStocks(500);
+		stockDto.setStandardPrice(5000.00);
+		
+		Mockito.when(stockRepository.findByStockId(1l)).thenReturn(stocks);
+		
+		StockDto response=stockServiceImpl.getStockDetails(1l);
+		
+		
+	   Assert.assertEquals(stockDto.getCompanyName(), response.getCompanyName());
+	
+		
+	
+	}
 
 
 }
