@@ -63,6 +63,12 @@
 		
 		
 	</dependencies>
+<distributionManagement>
+ 	<snapshotRepository>
+	    <id>nexus</id>
+    	   <url>http://13.232.35.16:8081/nexus/content/repositories/nexus1/</url>
+  	</snapshotRepository>
+</distributionManagement>
 
 	<build>
 		<plugins>
